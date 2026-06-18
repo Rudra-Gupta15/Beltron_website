@@ -30,7 +30,7 @@ export const heroSlides = [
       { label: 'SUPPORT', desc: 'Forms and search tools' },
     ],
     bg: 'slide-orange',
-    image: '/assets/procurement_access.png',
+    image: '/images/Ch.png',
   },
   {
     tag: '☁️ CLOUD & INNOVATION',
@@ -46,7 +46,7 @@ export const heroSlides = [
       { label: 'INNOVATION', desc: 'AI-enabled analytics and blockchain' },
     ],
     bg: 'slide-blue-dark',
-    image: '/assets/india_tech_map.png',
+    image: '/images/Im.jpg',
   },
   {
     tag: '🌐 DIGITAL PUBLIC INFRASTRUCTURE',
@@ -62,7 +62,7 @@ export const heroSlides = [
       { label: 'REACH', desc: 'Updates, media, and public visibility' },
     ],
     bg: 'slide-purple',
-    image: '/assets/digital_infrastructure.png',
+    image: '/images/22.png',
   },
 ];
 
@@ -139,16 +139,20 @@ export const vacancies = [
 
 // ─── MEDIA ────────────────────────────────────────────────────────────────────
 export const mediaItems = [
-  { type: 'News',          title: 'BELTRON Launches MPLS Connectivity for Bihar Virtual Court', date: 'Jun 10, 2026', emoji: '📰' },
-  { type: 'Press Release', title: 'DEO CBT Results Declared — Merit List Available for Download', date: 'Jun 5, 2026', emoji: '📢' },
-  { type: 'Event',         title: 'Digital Bihar Summit 2026 — BELTRON Participates', date: 'May 28, 2026', emoji: '🎪' },
-  { type: 'Gallery',       title: 'Programmer Exam 2024 — Exam Centre Photo Gallery', date: 'May 20, 2026', emoji: '🖼️' },
+  { type: 'News',          title: 'BELTRON Launches MPLS Connectivity for Bihar Virtual Court', date: 'Jun 10, 2026', image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800' },
+  { type: 'Press Release', title: 'DEO CBT Results Declared — Merit List Available for Download', date: 'Jun 5, 2026', image: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&q=80&w=800' },
+  { type: 'Event',         title: 'Digital Bihar Summit 2026 — BELTRON Participates', date: 'May 28, 2026', image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800' },
+  { type: 'Gallery',       title: 'Programmer Exam 2024 — Exam Centre Photo Gallery', date: 'May 20, 2026', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800' },
 ]
 
 // ─── PARTNERS (Marquee) ───────────────────────────────────────────────────────
 export const partners = [
-  '🏛️ Govt. of Bihar', '💻 MeitY', '🌐 Digital India', '🏢 NIC',
-  '🇮🇳 myGov', '🔗 Bihar IT Dept.', '⚙️ NASSCOM', '📡 BSNL',
+  { name: 'Govt. of Bihar', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Government_of_Bihar_Emblem.svg' },
+  { name: 'MeitY', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Ministry_of_Electronics_and_Information_Technology.svg' },
+  { name: 'Digital India', logo: 'https://upload.wikimedia.org/wikipedia/en/9/95/Digital_India_logo.svg' },
+  { name: 'NIC', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/National_Informatics_Centre_Logo.svg' },
+  { name: 'BSNL', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/94/BSNL_Eng_Logo_n_png.png' },
+  { name: 'NASSCOM', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/NASSCOM_logo.svg' },
 ]
 
 // ─── FOOTER LINKS ─────────────────────────────────────────────────────────────

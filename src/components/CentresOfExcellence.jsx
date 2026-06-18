@@ -1,124 +1,120 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { FiCheck, FiTarget, FiMic, FiStar, FiArrowRight } from 'react-icons/fi'
+import { FiArrowRight } from 'react-icons/fi'
 
 const CentresOfExcellence = () => (
-  <section id="coe" className="py-24 bg-white relative">
-    <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-      
-      {/* Header aligned perfectly to the center */}
+  <section id="coe" className="py-24 bg-[#F8FAFF] relative">
+    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+
+      {/* Modern, dynamic heading instead of classical left-aligned text */}
       <div className="text-center max-w-4xl mx-auto mb-16">
-        <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[12px] font-bold tracking-[0.2em] text-[#0A2E73] uppercase mb-6">
-          <span className="text-blue-500">#</span> DIGITAL BIHAR
-        </span>
-        <h2 className="text-[36px] md:text-[48px] font-extrabold text-[#0F172A] leading-[1.2] tracking-tight mb-6">
-          A digital excellence workshop series for AI, Cyber Security, and Cloud.
+        <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-[12px] font-bold tracking-[0.2em] text-[#0A2E73] uppercase mb-6">
+          <span className="w-2 h-2 rounded-full bg-[#0A2E73] animate-pulse"></span> Initiative Spotlight
+        </div>
+        <h2 className="text-[36px] md:text-[52px] font-extrabold text-[#0F172A] leading-[1.15] tracking-tight mb-6">
+          Digital Excellence Workshop for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0A2E73] to-[#00B4D8]">AI & Cloud</span>
         </h2>
-        <p className="text-[18px] text-gray-500 leading-relaxed font-medium">
+        <p className="text-[18px] text-gray-600 leading-relaxed font-medium mx-auto">
           Digital Bihar is BELTRON's flagship initiative under the state's Digital Excellence Programme. The launch focused on technology readiness, emerging technologies, and secure, inclusive, citizen-centric digital governance.
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-12 gap-8 items-start">
-        
-        {/* Left: 4-Grid Info Panels (Takes 5 columns) */}
-        <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-          <div className="bg-[#F8FAFF] rounded-2xl p-6 border border-blue-50 hover:shadow-md transition duration-300">
-            <div className="text-[11px] font-bold tracking-[0.15em] text-[#0A2E73] uppercase mb-2">Programme</div>
-            <div className="text-[15px] font-bold text-[#0F172A] leading-snug">Digital Excellence Programme</div>
+      {/* Enterprise Unified Block Design */}
+      <div className="bg-white rounded-none md:rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-gray-200 overflow-hidden flex flex-col lg:flex-row">
+
+        {/* Left Sidebar: Event Brief (Corporate Blue) */}
+        <div className="lg:w-[35%] bg-[#0A2E73] p-8 lg:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+          {/* Subtle background pattern */}
+          <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 border-[40px] border-white/5 rounded-full pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 border-[30px] border-blue-400/10 rounded-full pointer-events-none"></div>
+
+          <div className="relative z-10">
+            <h3 className="text-2xl font-bold mb-10 pb-6 border-b border-white/20">Programme Details</h3>
+
+            <div className="space-y-8">
+              <div>
+                <div className="text-blue-300 text-[11px] font-bold uppercase tracking-widest mb-1">Date</div>
+                <div className="text-[17px] font-medium">20 April 2026</div>
+              </div>
+              <div>
+                <div className="text-blue-300 text-[11px] font-bold uppercase tracking-widest mb-1">Venue</div>
+                <div className="text-[17px] font-medium leading-snug">Convention Centre,<br />Patna, Bihar</div>
+              </div>
+              <div>
+                <div className="text-blue-300 text-[11px] font-bold uppercase tracking-widest mb-1">Projected Impact</div>
+                <div className="text-[17px] font-medium leading-snug">10,000+ Direct reach<br />1 Lakh+ Indirect beneficiaries</div>
+              </div>
+            </div>
           </div>
-          <div className="bg-[#F8FAFF] rounded-2xl p-6 border border-blue-50 hover:shadow-md transition duration-300">
-            <div className="text-[11px] font-bold tracking-[0.15em] text-[#0A2E73] uppercase mb-2">Date</div>
-            <div className="text-[15px] font-bold text-[#0F172A] leading-snug">20 April 2026</div>
-          </div>
-          <div className="bg-[#F8FAFF] rounded-2xl p-6 border border-blue-50 hover:shadow-md transition duration-300">
-            <div className="text-[11px] font-bold tracking-[0.15em] text-[#0A2E73] uppercase mb-2">Venue</div>
-            <div className="text-[15px] font-bold text-[#0F172A] leading-snug">Convention Centre,<br/>Patna</div>
-          </div>
-          <div className="bg-[#F8FAFF] rounded-2xl p-6 border border-blue-50 hover:shadow-md transition duration-300">
-            <div className="text-[11px] font-bold tracking-[0.15em] text-[#0A2E73] uppercase mb-2">Impact</div>
-            <div className="text-[15px] font-bold text-[#0F172A] leading-snug">10,000+ Direct<br/>1 Lakh+ Indirect</div>
-          </div>
-          
-          <div className="col-span-2 mt-4">
-            <a href="#" className="flex items-center justify-center gap-2 bg-[#0A2E73] text-white font-bold text-[15px] w-full py-4 rounded-xl hover:bg-[#0F4BB8] transition-colors shadow-[0_8px_20px_rgba(10,46,115,0.15)]">
-              Open Digital Bihar Story <FiArrowRight className="text-lg" />
+
+          <div className="relative z-10 mt-16">
+            <a href="#" className="group flex items-center justify-between w-full bg-white text-[#0A2E73] py-4 px-6 font-bold text-[15px] hover:bg-gray-50 transition-colors">
+              <span>Read Full Story</span>
+              <FiArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
 
-        {/* Right: Detailed Cards (Takes 7 columns) */}
-        <div className="lg:col-span-7 flex flex-col gap-6">
-          
-          {/* Card 1: Objectives */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white border border-gray-100 rounded-2xl p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
-          >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
-                <FiTarget className="text-[#0A2E73] text-xl" />
-              </div>
-              <div>
-                <div className="text-[11px] font-bold tracking-[0.2em] text-[#0A2E73] uppercase">Objectives</div>
-                <h3 className="text-[20px] font-bold text-[#0F172A]">What the workshop is built to do.</h3>
-              </div>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="flex items-start gap-3">
-                <div className="mt-1 bg-green-50 text-green-600 rounded-full p-1"><FiCheck size={14}/></div>
-                <span className="text-[14px] text-gray-600 font-medium leading-relaxed">Build awareness and institutional preparedness for AI, Cyber Security, and Cloud.</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="mt-1 bg-green-50 text-green-600 rounded-full p-1"><FiCheck size={14}/></div>
-                <span className="text-[14px] text-gray-600 font-medium leading-relaxed">Strengthen secure, inclusive, citizen-centric digital governance.</span>
-              </div>
-              <div className="flex items-start gap-3 md:col-span-2">
-                <div className="mt-1 bg-green-50 text-green-600 rounded-full p-1"><FiCheck size={14}/></div>
-                <span className="text-[14px] text-gray-600 font-medium leading-relaxed">Create a repeatable capacity-building model for ministries, departments, and States/UTs.</span>
-              </div>
-            </div>
-          </motion.div>
+        {/* Right Content Area */}
+        <div className="lg:w-[65%] p-8 lg:p-14">
 
-          {/* Card 2: Leadership Voices */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="bg-white border border-gray-100 rounded-2xl p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
-          >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
-                <FiMic className="text-[#0A2E73] text-xl" />
+          {/* Section 1: Objectives */}
+          <div className="mb-14">
+            <div className="flex items-center gap-4 mb-8">
+              <span className="w-10 h-10 bg-blue-50 text-[#0A2E73] flex items-center justify-center font-bold text-lg rounded-sm">01</span>
+              <h4 className="text-[22px] font-bold text-[#0F172A]">Core Objectives</h4>
+            </div>
+
+            <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+              <li className="flex gap-4 items-start">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#0A2E73] mt-2.5 shrink-0"></div>
+                <span className="text-[15px] text-gray-700 leading-relaxed">
+                  Build awareness and institutional preparedness for AI, Cyber Security, and Cloud.
+                </span>
+              </li>
+              <li className="flex gap-4 items-start">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#0A2E73] mt-2.5 shrink-0"></div>
+                <span className="text-[15px] text-gray-700 leading-relaxed">
+                  Strengthen secure, inclusive, and citizen-centric digital governance models.
+                </span>
+              </li>
+              <li className="flex gap-4 items-start sm:col-span-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#0A2E73] mt-2.5 shrink-0"></div>
+                <span className="text-[15px] text-gray-700 leading-relaxed">
+                  Create a repeatable, scalable capacity-building model for ministries, departments, and other States/UTs.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <hr className="border-gray-200 mb-14" />
+
+          {/* Section 2: Leadership Voices */}
+          <div>
+            <div className="flex items-center gap-4 mb-8">
+              <span className="w-10 h-10 bg-blue-50 text-[#0A2E73] flex items-center justify-center font-bold text-lg rounded-sm">02</span>
+              <h4 className="text-[22px] font-bold text-[#0F172A]">Leadership & Governance</h4>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-8">
+              <div className="border-l-2 border-gray-200 pl-5 hover:border-[#0A2E73] transition-colors">
+                <div className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Chief Guest</div>
+                <div className="text-[16px] text-[#0F172A] font-bold mb-1">Shri Samrat Choudhary</div>
+                <div className="text-[13px] text-gray-500 font-medium leading-snug">Hon'ble Chief Minister</div>
               </div>
-              <div>
-                <div className="text-[11px] font-bold tracking-[0.2em] text-[#0A2E73] uppercase">Leadership Voices</div>
-                <h3 className="text-[20px] font-bold text-[#0F172A]">The officials shaping the launch.</h3>
+
+              <div className="border-l-2 border-gray-200 pl-5 hover:border-[#0A2E73] transition-colors">
+                <div className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">State Leadership</div>
+                <div className="text-[16px] text-[#0F172A] font-bold mb-1">Shri Nitish Mishra</div>
+                <div className="text-[13px] text-gray-500 font-medium leading-snug">Hon'ble IT Minister</div>
+              </div>
+
+              <div className="border-l-2 border-gray-200 pl-5 hover:border-[#0A2E73] transition-colors">
+                <div className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">IT Leadership</div>
+                <div className="text-[16px] text-[#0F172A] font-bold mb-1">Kaushal Kishore, IAS</div>
+                <div className="text-[13px] text-gray-500 font-medium leading-snug">Managing Director, BSEDC</div>
               </div>
             </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <div className="border-l-2 border-blue-100 pl-4">
-                <div className="text-[12px] font-bold text-gray-400 uppercase tracking-wider mb-1">Chief Guest</div>
-                <div className="text-[15px] text-[#0F172A] font-bold">Shri Samrat Choudhary</div>
-                <div className="text-[13px] text-gray-500 font-medium">Hon'ble Chief Minister</div>
-              </div>
-              <div className="border-l-2 border-blue-100 pl-4">
-                <div className="text-[12px] font-bold text-gray-400 uppercase tracking-wider mb-1">State leadership</div>
-                <div className="text-[15px] text-[#0F172A] font-bold">Shri Nitish Mishra</div>
-                <div className="text-[13px] text-gray-500 font-medium">Hon'ble IT Minister</div>
-              </div>
-              <div className="border-l-2 border-blue-100 pl-4">
-                <div className="text-[12px] font-bold text-gray-400 uppercase tracking-wider mb-1">IT leadership</div>
-                <div className="text-[15px] text-[#0F172A] font-bold">Kaushal Kishore, IAS</div>
-                <div className="text-[13px] text-gray-500 font-medium">MD, BSEDC</div>
-              </div>
-            </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

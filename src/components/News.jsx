@@ -46,19 +46,36 @@ const News = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white border border-[#D1DFEC] rounded-2xl p-5 hover:shadow-[0_12px_24px_rgba(13,53,130,0.08)] transition-shadow group cursor-pointer"
+              className="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(10,46,115,0.12)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer flex flex-col"
             >
-              <div className="h-32 rounded-xl bg-[#F8FAFF] border border-blue-100 flex items-center justify-center text-5xl mb-4 group-hover:bg-blue-50 transition-colors">
-                {item.emoji}
+              {/* Image Section with Glass Badge */}
+              <div className="relative h-48 overflow-hidden bg-gray-100">
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/30 backdrop-blur-md px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-white shadow-sm">
+                    {item.type}
+                  </span>
+                </div>
               </div>
-              <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.15em] text-[#0052CC] mb-3">
-                {item.type}
-              </span>
-              <h3 className="font-bold text-[#0F172A] text-[15px] mb-2 group-hover:text-[#0052CC] transition-colors leading-snug">
-                {item.title}
-              </h3>
-              <p className="text-[13px] font-semibold text-gray-500 mb-4">{item.date}</p>
-              <a href="#" className="inline-flex text-[#003A8C] text-[13px] font-bold hover:underline underline-offset-4">Read More →</a>
+              
+              {/* Content Section */}
+              <div className="p-6 flex flex-col flex-1">
+                <p className="text-[12px] font-bold text-gray-400 mb-3 uppercase tracking-wider">{item.date}</p>
+                <h3 className="font-bold text-[#0F172A] text-[16px] mb-4 group-hover:text-[#0A2E73] transition-colors leading-snug flex-1">
+                  {item.title}
+                </h3>
+                
+                <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-[#0A2E73] text-[13px] font-bold group-hover:underline underline-offset-4">Read Full Story</span>
+                  <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-[#0A2E73] group-hover:bg-[#0A2E73] group-hover:text-white transition-colors">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

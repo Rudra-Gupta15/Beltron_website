@@ -15,18 +15,16 @@ const Footer = () => (
         <div className="bg-gray-50/50 border border-gray-200/60 rounded-[1.25rem] p-4 shadow-[inset_0_2px_10px_rgba(0,0,0,0.01)]">
           <div className="overflow-hidden">
             <div className="marquee-track flex gap-4 items-center">
-              {[...partners, ...partners, ...partners].map((p, i) => {
-                const emoji = p.split(' ')[0]
-                const text = p.substring(p.indexOf(' ') + 1)
-                return (
-                  <a key={i} href="#" className="flex-shrink-0 w-[240px] h-[100px] bg-white border border-gray-200 rounded-xl flex items-center justify-center p-4 hover:border-[#0F4BB8] hover:shadow-[0_8px_20px_rgba(10,46,115,0.08)] transition-all duration-300 group">
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl opacity-90 group-hover:scale-110 transition-transform duration-300 filter grayscale group-hover:grayscale-0">{emoji}</span>
-                      <span className="text-[15px] font-extrabold text-[#1C2F57] group-hover:text-[#0A2E73] transition-colors leading-tight">{text}</span>
-                    </div>
+              {[...partners, ...partners, ...partners].map((p, i) => (
+                  <a key={i} href="#" className="flex-shrink-0 h-[54px] px-6 bg-white border border-gray-200 rounded-xl flex items-center justify-center gap-3 hover:border-[#0F4BB8] hover:shadow-[0_4px_12px_rgba(10,46,115,0.06)] transition-all duration-300 group">
+                    <img 
+                      src={p.logo} 
+                      alt={p.name} 
+                      className="h-6 w-auto object-contain transition-all duration-300"
+                    />
+                    <span className="text-[14px] font-bold text-[#1C2F57] group-hover:text-[#0A2E73] transition-colors">{p.name}</span>
                   </a>
-                )
-              })}
+              ))}
             </div>
           </div>
         </div>

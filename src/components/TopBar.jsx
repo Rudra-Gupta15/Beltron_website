@@ -10,16 +10,20 @@ const TopBar = () => {
         {/* Left — Government logos / affiliations */}
         <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[12px] font-medium tracking-wide">
           <span className="flex items-center gap-1.5 text-white hover:text-cyan-100 transition cursor-pointer">
-            🇮🇳 <span>Government of Bihar</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Government_of_Bihar_Emblem.svg" alt="Govt of Bihar" className="h-[18px] w-auto object-contain bg-white/90 rounded-sm p-0.5" />
+            <span>Government of Bihar</span>
           </span>
           <span className="hidden sm:flex items-center gap-1.5 text-white/95 hover:text-cyan-100 transition cursor-pointer">
-            💻 <span>Dept of IT, Bihar</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Ministry_of_Electronics_and_Information_Technology.svg" alt="MeitY" className="h-[18px] w-auto object-contain bg-white/90 rounded-sm p-0.5" />
+            <span>MeitY</span>
           </span>
-          <span className="hidden md:flex items-center rounded-sm bg-white/10 px-2 py-0.5 border border-white/20 transition hover:bg-white/20">
-            🌐 <span className="ml-1 font-semibold">Digital India</span>
+          <span className="hidden md:flex items-center rounded-sm bg-white/10 px-2 py-0.5 border border-white/20 transition hover:bg-white/20 cursor-pointer">
+            <img src="https://upload.wikimedia.org/wikipedia/en/9/95/Digital_India_logo.svg" alt="Digital India" className="h-[14px] w-auto object-contain bg-white/90 rounded-sm px-1 py-0.5" />
+            <span className="ml-1.5 font-semibold text-white">Digital India</span>
           </span>
-          <span className="hidden lg:flex items-center rounded-sm bg-white/10 px-2 py-0.5 border border-white/20 transition hover:bg-white/20">
-            🧹 <span className="ml-1 font-semibold">Swachh Bharat</span>
+          <span className="hidden lg:flex items-center rounded-sm bg-white/10 px-2 py-0.5 border border-white/20 transition hover:bg-white/20 cursor-pointer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/National_Informatics_Centre_Logo.svg" alt="NIC" className="h-[14px] w-auto object-contain bg-white/90 rounded-sm px-1 py-0.5" />
+            <span className="ml-1.5 font-semibold text-white">NIC</span>
           </span>
         </div>
 

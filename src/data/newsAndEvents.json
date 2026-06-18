@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Score Card Link",
+    "isNew": true,
+    "status": "Active",
+    "publishDate": "29 Jan 2026 07:11 PM"
+  },
+  {
+    "id": 2,
+    "name": "Objection Link for BSEDC Programmer Exam: Open from Aug 29, 2025, 10:00 AM to Sep 2, 2025, 11:55 PM. For queries, contact Help Desk at 917996149111 or helpdeskprogrammer@gmail.com",
+    "isNew": false,
+    "status": "Active",
+    "publishDate": "28 Aug 2025 06:37 PM"
+  },
+  {
+    "id": 3,
+    "name": "Admit Card link for the BSEDC Programmer Examination scheduled on 05th and 06th August 2025. For any queries or assistance, please contact the Help Desk: Email: helpdeskprogrammer@gmail.com Phone: +91 79961 49111",
+    "isNew": true,
+    "status": "Active",
+    "publishDate": "01 Aug 2025 06:17 PM"
+  },
+  {
+    "id": 4,
+    "name": "Static Mock Link of BSEDC Programmer Exam",
+    "isNew": true,
+    "status": "Active",
+    "publishDate": "01 Aug 2025 06:13 PM"
+  },
+  {
+    "id": 5,
+    "name": "Result & Scorecard of Beltron Data Entry Operator CBT Exam 2024",
+    "isNew": true,
+    "status": "Active",
+    "publishDate": "12 Jan 2025 03:00 PM"
+  }
+]

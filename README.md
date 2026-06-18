@@ -1,6 +1,6 @@
-# BSEDC BELTRON Website — v2
+# BSEDC BELTRON Website 
 
-A pixel-faithful React + Vite + Tailwind CSS clone of the NICSI (nicsi.nic.in) government portal layout, populated with Bihar State Electronics Development Corporation (BELTRON) content.
+A comprehensive, pixel-faithful React + Vite + Tailwind CSS clone of the NICSI (nicsi.nic.in) government portal layout, deeply integrated and populated with Bihar State Electronics Development Corporation (BELTRON) content.
 
 ## 🚀 Quick Start
 
@@ -18,7 +18,7 @@ npm run build
 
 ---
 
-## 📁 Folder Structure
+## 📁 Folder Structure & Architecture
 
 ```
 beltron-v2/
@@ -28,30 +28,52 @@ beltron-v2/
 ├── postcss.config.js
 ├── package.json
 │
+├── extract.py                # Python script to extract general live Beltron data
+├── extract_tenders.py        # Python script to scrape live Tenders
+│
 └── src/
-    ├── main.jsx              # Entry point
-    ├── App.jsx               # Root: TopBar + Navbar + Home + Footer
+    ├── main.jsx              # Entry point (React Router setup)
+    ├── App.jsx               # Root Layout: TopBar + Navbar + Routing + Footer
     ├── index.css             # Tailwind + Swiper imports + global animations
     │
     ├── data/
-    │   └── index.js          # ✅ All site content (slides, notices, services, etc.)
+    │   ├── index.js          # Core static data (hero slides, quick links, etc.)
+    │   ├── currentTenders.json
+    │   ├── archivedTenders.json
+    │   ├── projects.json
+    │   ├── newsAndEvents.json
+    │   └── lettersAndCirculars.json
     │
-    ├── pages/
-    │   └── Home.jsx          # Assembles all sections in order
+    ├── pages/                # Individual Route Pages
+    │   ├── Home.jsx          # Assembles all homepage components
+    │   ├── About.jsx
+    │   ├── BoardOfDirectors.jsx
+    │   ├── ManagingDirectors.jsx
+    │   ├── OurTeam.jsx
+    │   ├── MissionVision.jsx
+    │   ├── Tenders.jsx       # Tabbed interface for current/archived
+    │   ├── Projects.jsx
+    │   ├── Services.jsx
+    │   ├── Gallery.jsx
+    │   ├── Procurement.jsx
+    │   ├── NewsAndEvents.jsx
+    │   ├── LettersAndCirculars.jsx
+    │   └── ContactUs.jsx
     │
-    └── components/
-        ├── TopBar.jsx        # Very top gov bar (accessibility, logos, font size)
-        ├── Navbar.jsx        # Sticky mega nav with dropdowns (Framer Motion)
+    └── components/           # Reusable UI Components
+        ├── TopBar.jsx        # Accessibility, language, and font size controls
+        ├── Navbar.jsx        # Sticky mega nav with responsive dropdowns
         ├── HeroSlider.jsx    # 70vh auto-sliding hero (Swiper.js)
-        ├── NoticeTicker.jsx  # Scrolling tender/result notices
-        ├── About.jsx         # Profile + Stats + Leadership + MD Message
-        ├── Projects.jsx      # Dark bg project cards (6 cards)
-        ├── Services.jsx      # 4-col service grid (hover: blue)
-        ├── CentresOfExcellence.jsx  # 5 horizontal CoE cards
-        ├── Clients.jsx       # Auto-scroll marquee vendor logos
-        ├── Careers.jsx       # Tenders (left) + Vacancies (right)
+        ├── NoticeTicker.jsx  # Scrolling marquee notices
+        ├── About.jsx         # Homepage About overview
+        ├── Projects.jsx      # Homepage Projects
+        ├── Services.jsx      # Homepage Services grid
+        ├── CentresOfExcellence.jsx 
+        ├── Clients.jsx       # Marquee vendor logos
+        ├── DocumentBoard.jsx # Tenders / Vacancies board
         ├── News.jsx          # Tabbed media section
-        └── Footer.jsx        # 4-col dark footer + policy + meta bar
+        ├── GallerySection.jsx # Homepage dynamic gallery preview
+        └── Footer.jsx        # Comprehensive footer
 ```
 
 ---
@@ -71,14 +93,10 @@ beltron-v2/
 
 ## ✏️ Updating Content
 
-All text content lives in **`src/data/index.js`**. To update:
-- Hero slides → `heroSlides[]`
-- Notices ticker → `notices[]`
-- Leadership → `leaders[]`
-- Services → `services[]`
-- Projects → `projects[]`
-- Tenders → `tenders[]`
-- Vacancies → `vacancies[]`
+The application uses a hybrid approach to content management:
+1. **Static Data**: Core homepage elements (hero slider, static links) are managed in `src/data/index.js`.
+2. **Dynamic JSON Data**: Large datasets like Tenders, Projects, News, and Letters are stored in `.json` files within `src/data/`.
+3. **Data Extraction Scripts**: You can run `python extract.py` or `python extract_tenders.py` to automatically scrape and sync live updates from the official `bsedc.bihar.gov.in` website into the local `.json` stores!
 
 ---
 
@@ -87,6 +105,7 @@ All text content lives in **`src/data/index.js`**. To update:
 | Library | Purpose |
 |---------|---------|
 | React 18 | UI framework |
+| React Router DOM v6 | Multi-page routing |
 | Vite 5 | Build tool (fast HMR) |
 | Tailwind CSS 3 | Utility-first styling |
 | Framer Motion | Animations & transitions |
@@ -95,4 +114,4 @@ All text content lives in **`src/data/index.js`**. To update:
 
 ---
 
-*Content based on bsedc.bihar.gov.in · Layout inspired by nicsi.nic.in*
+*Content dynamically synced from bsedc.bihar.gov.in · Layout inspired by robust government portals.*
