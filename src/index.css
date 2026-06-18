@@ -1,0 +1,79 @@
+/* Swiper */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Outfit', 'Inter', 'Poppins', sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .font-cursive {
+    font-family: 'Dancing Script', cursive;
+  }
+  a { text-decoration: none; color: inherit; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all hover:bg-darkblue;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-primary text-primary px-5 py-2.5 rounded-lg font-semibold text-sm transition-all hover:bg-primary hover:text-white;
+  }
+  .btn-white {
+    @apply inline-flex items-center gap-2 bg-white text-primary px-5 py-2.5 rounded-lg font-semibold text-sm transition-all hover:bg-blue-50;
+  }
+  .section-title {
+    @apply text-3xl font-bold text-darkblue text-center mb-2;
+  }
+  .section-sub {
+    @apply text-gray-500 text-center mb-10 text-base;
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-sm p-6 transition-all hover:shadow-lg hover:-translate-y-1;
+  }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 35s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+/* Ticker */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track { animation: ticker 40s linear infinite; }
+.ticker-track:hover { animation-play-state: paused; }
+
+/* Custom swiper bullets */
+.swiper-pagination-bullet { background: rgba(255,255,255,0.5) !important; }
+.swiper-pagination-bullet-active { background: #fff !important; }
+
+/* High Contrast Mode */
+html.high-contrast {
+  filter: invert(1) hue-rotate(180deg) grayscale(20%);
+  background-color: #000;
+}
+html.high-contrast img, 
+html.high-contrast video,
+html.high-contrast iframe {
+  filter: invert(1) hue-rotate(180deg) grayscale(0%);
+}

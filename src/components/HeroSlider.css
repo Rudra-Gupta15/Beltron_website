@@ -1,0 +1,353 @@
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 0 0;
+  transition: background 0.6s ease;
+}
+
+/* Slide Backgrounds aligned with NICSI */
+.slide-orange { background: linear-gradient(115deg, #8b3a0f 0%, #d97c30 50%, #8b3a0f 100%); }
+.slide-purple { background: linear-gradient(115deg, #2e1065 0%, #5b21b6 50%, #2e1065 100%); }
+.slide-blue   { background: linear-gradient(115deg, #0a2e73 0%, #0f4bb8 50%, #0a2e73 100%); }
+.slide-blue-dark { background: linear-gradient(115deg, #071933 0%, #0c2a52 50%, #071933 100%); }
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+/* Left Content */
+.hero-content { color: #fff; }
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.hero-label {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: #fff;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #0c2a52;
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-white:hover { background: #f0f0f0; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.15); }
+
+.paths-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.paths-list {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.quick-path-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.quick-path-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Right Card */
+.hero-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 510px;
+  justify-content: center;
+}
+
+.hero-card-main {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+.hero-card-header {
+  margin-bottom: 1rem;
+}
+.hero-card-header-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+.hero-card-header-desc {
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+/* Services Grid (Slide 1) */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.service-mini-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #333;
+}
+.service-mini-icon {
+  font-size: 1.2rem;
+}
+.service-mini-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0c2a52;
+}
+
+/* Image Tracks (Slides 2,3,4) */
+.hero-card-img {
+  position: relative;
+  height: 260px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.hero-card-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: #fff;
+  padding: 1.5rem 1.2rem 1rem;
+}
+
+.track-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.hero-card-overlay p {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Track cards */
+.hero-tracks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.track-item {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.track-name {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.4rem;
+}
+
+.track-desc {
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Indicators Container */
+.hero-bottom-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+}
+
+.indicator {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s;
+  font-family: inherit;
+  position: relative;
+}
+
+.indicator:hover { background: rgba(255,255,255,0.05); }
+
+.indicator.active {
+  background: #fff;
+  color: #0c2a52;
+  border-radius: 8px 8px 0 0;
+  margin-top: -10px;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+  border-right: none;
+}
+
+.indicator-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.indicator.active .indicator-num {
+  color: #666;
+}
+
+.indicator-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  flex-shrink: 0;
+}
+.indicator.active .indicator-dot { background: #0c2a52; }
+.indicator-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.controls-wrap {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.pause-btn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 20px;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+.pause-btn:hover { background: rgba(255,255,255,0.15); }
+
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-card-container { display: none; }
+  .hero-title { font-size: 2.2rem; }
+  .indicator-text { display: none; }
+}
