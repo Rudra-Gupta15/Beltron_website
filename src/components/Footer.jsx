@@ -1,5 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { usefulLinks, resourceLinks, partners } from '../data'
+import { FiTwitter, FiFacebook, FiInstagram, FiLinkedin } from 'react-icons/fi'
+import { FaRobot } from 'react-icons/fa'
 
 const Footer = () => (
   <>
@@ -60,9 +63,9 @@ const Footer = () => (
           <ul className="flex flex-col gap-3">
             {usefulLinks.map((l, i) => (
               <li key={i}>
-                <a href="#" className="text-[14px] font-medium text-blue-100/90 hover:text-white transition-colors flex items-center gap-2">
-                  <span className="text-cyan-400 text-lg leading-none">›</span> {l}
-                </a>
+                <Link to={l.path} className="text-[14px] font-medium text-blue-100/90 hover:text-white transition-colors flex items-center gap-2">
+                  <span className="text-cyan-400 text-lg leading-none">›</span> {l.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -74,9 +77,9 @@ const Footer = () => (
           <ul className="flex flex-col gap-3">
             {resourceLinks.map((l, i) => (
               <li key={i}>
-                <a href="#" className="text-[14px] font-medium text-blue-100/90 hover:text-white transition-colors flex items-center gap-2">
-                  <span className="text-cyan-400 text-lg leading-none">›</span> {l}
-                </a>
+                <Link to={l.path} className="text-[14px] font-medium text-blue-100/90 hover:text-white transition-colors flex items-center gap-2">
+                  <span className="text-cyan-400 text-lg leading-none">›</span> {l.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -104,7 +107,7 @@ const Footer = () => (
             </p>
           </div>
           <div className="flex gap-3 mt-8">
-            {['🐦', '📘', '📸', '💼'].map((icon, i) => (
+            {[<FiTwitter />, <FiFacebook />, <FiInstagram />, <FiLinkedin />].map((icon, i) => (
               <a key={i} href="#"
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-lg hover:bg-white/10 hover:border-white/40 transition-colors bg-white/5"
               >
@@ -141,6 +144,14 @@ const Footer = () => (
             </div>
           ))}
         </div>
+        
+        {/* Hidden Credit Easter Egg */}
+        <a href="https://rudra-gupta.vercel.app/" target="_blank" rel="noopener noreferrer" className="absolute bottom-0 right-0 p-5 opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-center gap-2 cursor-pointer group/egg">
+          <span className="font-bold tracking-[0.2em] text-[9px] text-gray-400 group-hover/egg:text-gray-300 transition-colors uppercase">
+            Designed By
+          </span>
+          <FaRobot className="text-[#38bdf8] text-[14px] opacity-80 group-hover/egg:opacity-100 transition-opacity" />
+        </a>
       </div>
 
       {/* Branding Strip */}

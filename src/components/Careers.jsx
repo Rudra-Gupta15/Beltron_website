@@ -33,9 +33,6 @@ const Careers = () => (
                     <span className="text-[12px] text-gray-500 font-semibold bg-gray-50 border border-gray-200 px-2.5 py-1 rounded">Ref: {t.ref}</span>
                     <span className="text-[12px] font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded">📅 {t.date}</span>
                   </div>
-                  <a href="#" className="flex items-center gap-2 text-[13px] font-bold text-white bg-[#0A2E73] hover:bg-blue-800 px-4 py-1.5 rounded transition-colors shadow-sm">
-                    Download
-                  </a>
                 </div>
               </motion.div>
             ))}
@@ -77,15 +74,6 @@ const Careers = () => (
                       {v.date === 'Closed' ? '🔴 Closed' : `📅 ${v.date}`}
                     </span>
                   </div>
-                  <a href="#"
-                    className={`flex items-center gap-2 text-[13px] font-bold px-4 py-1.5 rounded transition-colors shadow-sm ${
-                      v.date === 'Closed'
-                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed border border-gray-200 shadow-none'
-                        : 'bg-[#0A2E73] text-white hover:bg-blue-800'
-                    }`}
-                  >
-                    {v.date === 'Closed' ? 'Closed' : 'Apply Now'}
-                  </a>
                 </div>
               </motion.div>
             ))}

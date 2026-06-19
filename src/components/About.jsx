@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { leaders } from '../data'
 import { FiArrowRight } from 'react-icons/fi'
 
@@ -70,9 +71,9 @@ const About = () => (
             </div>
             
             <div className="flex justify-end mt-4">
-              <button className="bg-[#0f2d69] hover:bg-[#0A2E73] text-white px-6 py-2.5 rounded-[6px] font-semibold text-[13px] transition-colors shadow-sm">
+              <Link to="/about" className="inline-block bg-[#0f2d69] hover:bg-[#0A2E73] text-white px-6 py-2.5 rounded-[6px] font-semibold text-[13px] transition-colors shadow-sm">
                 Know More..
-              </button>
+              </Link>
             </div>
           </motion.div>
 

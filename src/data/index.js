@@ -156,5 +156,24 @@ export const partners = [
 ]
 
 // ─── FOOTER LINKS ─────────────────────────────────────────────────────────────
-export const usefulLinks = ['Home','About BELTRON','Empanelled Vendors','Tenders','FAQ','Vacancies','Exams','Contact Us']
-export const resourceLinks = ['Download Forms','Merit Lists','Tender Documents','Media Gallery','Press Releases','News & Updates','Annual Report','RTI']
+export const usefulLinks = [
+  { label: 'Home', path: '/' },
+  { label: 'About BELTRON', path: '/about' },
+  { label: 'Empanelled Vendors', path: '/procurement' },
+  { label: 'Tenders', path: '/tenders/current' },
+  { label: 'FAQ', path: '/contact-us' },
+  { label: 'Vacancies', path: '/vacancies' },
+  { label: 'Exams', path: '/resources' },
+  { label: 'Contact Us', path: '/contact-us' }
+]
+
+export const resourceLinks = [
+  { label: 'Download Forms', path: '/resources' },
+  { label: 'Merit Lists', path: '/resources' },
+  { label: 'Tender Documents', path: '/tenders/archived' },
+  { label: 'Media Gallery', path: '/gallery' },
+  { label: 'Press Releases', path: '/news' },
+  { label: 'News & Updates', path: '/news-and-events' },
+  { label: 'Annual Report', path: '/resources' },
+  { label: 'RTI', path: '/resources' }
+]

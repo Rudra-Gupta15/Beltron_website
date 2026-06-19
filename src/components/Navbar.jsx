@@ -259,7 +259,7 @@ const Navbar = () => {
             <div className="hidden sm:flex items-center">
               <img src="/assets/bihar-sarkar-logo.png" alt="Bihar Sarkar" className="h-12 xl:h-14 w-auto object-contain" />
             </div>
-            <Link to="/" className="flex items-center border-l-2 border-gray-200/80 pl-4 h-[3.5rem]">
+            <Link to="/" className="flex items-center sm:border-l-2 sm:border-gray-200/80 sm:pl-4 h-[3.5rem]">
               <img src="/assets/beltron-logo.png" alt="BELTRON" className="h-10 xl:h-[3rem] w-auto object-contain translate-y-[2px]" />
             </Link>
           </div>
@@ -310,12 +310,12 @@ const Navbar = () => {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <div className="xl:hidden flex items-center ml-4">
-            <button
-              className="w-10 h-10 rounded-md border border-blue-100 bg-white text-[#1C2F57] flex items-center justify-center hover:bg-gray-50 transition-colors"
-              onClick={() => setMobileOpen(m => !m)}
+          <div className="xl:hidden ml-auto flex items-center">
+            <button 
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 text-[#0f2d69] hover:bg-blue-50 rounded-lg transition-colors"
             >
-              {mobileOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+              {mobileOpen ? <FiX size={26} /> : <FiMenu size={26} />}
             </button>
           </div>
         </div>
@@ -331,6 +331,13 @@ const Navbar = () => {
             className="overflow-hidden xl:hidden border-t border-blue-100 bg-[#f8fbff]"
           >
             <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+              <Link
+                to="/"
+                className="block px-3 py-2.5 text-[14px] font-semibold text-[#1C2F57] hover:text-[#0F4BB8] hover:bg-blue-50 rounded-lg transition-colors"
+                onClick={() => setMobileOpen(false)}
+              >
+                Home
+              </Link>
               {navItems.map((item, i) => (
                 <div key={i}>
                   {item.external ? (

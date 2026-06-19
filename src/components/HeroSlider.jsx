@@ -137,7 +137,7 @@ const HeroSlider = () => {
 
       {/* Bottom Indicators Bar */}
       <div className="hero-bottom-bar mt-8">
-        <div className="max-w-7xl mx-auto w-full flex">
+        <div className="max-w-7xl mx-auto w-full flex overflow-x-auto no-scrollbar">
           {heroSlides.map((s, i) => (
             <button
               key={i}
@@ -157,7 +157,10 @@ const HeroSlider = () => {
               className="pause-btn"
               onClick={() => setPaused(p => !p)}
             >
-              {paused ? '▶ Resume Auto Slide' : '⏸ Pause Auto Slide'}
+              <span className="flex items-center gap-1.5">
+                <span>{paused ? '▶' : '⏸'}</span>
+                <span className="hidden sm:inline">{paused ? 'Resume Auto Slide' : 'Pause Auto Slide'}</span>
+              </span>
             </button>
           </div>
         </div>

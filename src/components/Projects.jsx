@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { projects, leaders } from '../data'
 import { FiMonitor, FiServer, FiGlobe, FiShield, FiDatabase, FiCpu } from 'react-icons/fi'
 
@@ -23,7 +24,7 @@ const Projects = () => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="bg-white rounded-[1.5rem] border border-gray-100 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300 w-full md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)]"
+                className="bg-white rounded-[1.5rem] border border-gray-100 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:border-[#0F4BB8] transition-all duration-300 w-full md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)]"
               >
                 <div className="w-[50px] h-[50px] rounded-full flex items-center justify-center text-xl mb-4 bg-[#f4f7fb] text-[#0A2E73]">
                   {icons[i % icons.length]}
@@ -33,9 +34,9 @@ const Projects = () => (
                 <p className="text-gray-500 text-[13px] leading-[1.5] mb-5 flex-1 px-1">{p.desc}</p>
                 
                 <div className="mt-auto">
-                  <a href="#" className="inline-block text-[#0A2E73] text-[12px] font-extrabold tracking-widest uppercase hover:text-[#0F4BB8] transition-colors">
-                    Explore
-                  </a>
+                  <Link to="/projects" className="inline-block text-[#0A2E73] text-[12px] font-extrabold tracking-widest uppercase hover:text-[#0F4BB8] transition-colors">
+                    EXPLORE
+                  </Link>
                 </div>
               </motion.div>
             ))}

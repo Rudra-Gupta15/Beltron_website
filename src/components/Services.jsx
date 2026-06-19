@@ -22,7 +22,7 @@ const Services = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.04, duration: 0.4 }}
-            className="group rounded-[1.25rem] border p-5 sm:p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1.5 shadow-[0_10px_22px_rgba(10,46,115,0.04)] hover:shadow-[0_16px_28px_rgba(10,46,115,0.12)] flex flex-col gap-3 relative overflow-hidden"
+            className="group rounded-2xl sm:rounded-[1.25rem] border p-4 sm:p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1.5 shadow-[0_10px_22px_rgba(10,46,115,0.04)] hover:shadow-[0_16px_28px_rgba(10,46,115,0.12)] flex flex-col relative overflow-hidden"
             style={{ 
               background: `linear-gradient(to bottom right, #ffffff, ${s.color || '#F8FBFF'})`,
               borderColor: '#D6E6FF'
@@ -32,11 +32,11 @@ const Services = () => (
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-40 transition-opacity"></div>
             
             <div className="relative z-10">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-blue-100 bg-white/80 shadow-sm text-2xl group-hover:scale-110 transition-transform duration-300">
+              <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl border border-blue-100 bg-white/80 shadow-sm text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300">
                 {s.icon}
               </div>
-              <h3 className="font-extrabold text-[#0A2E73] text-[15px] sm:text-[16px] mt-4 mb-2 leading-tight group-hover:text-[#0F4BB8] transition-colors">{s.title}</h3>
-              <p className="text-[13px] text-[#1C2F57] opacity-80 leading-relaxed font-medium">{s.desc}</p>
+              <h3 className="font-extrabold text-[#0A2E73] text-[14px] sm:text-[16px] mt-3 sm:mt-4 mb-1.5 sm:mb-2 leading-tight group-hover:text-[#0F4BB8] transition-colors">{s.title}</h3>
+              <p className="text-[12px] sm:text-[13px] text-[#1C2F57] opacity-80 leading-relaxed font-medium line-clamp-3 sm:line-clamp-none">{s.desc}</p>
             </div>
           </motion.div>
         ))}

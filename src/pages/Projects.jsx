@@ -162,18 +162,14 @@ const Projects = () => {
                   </span>
                 </div>
 
-                {/* Bottom Row: Title & Arrow */}
+                {/* Bottom Row: Title */}
                 <div className="mt-auto flex justify-between items-end gap-6">
                   <h3 
-                    className="text-xl md:text-2xl font-bold text-white leading-tight md:leading-snug line-clamp-3"
+                    className="text-lg md:text-xl font-bold text-white leading-tight md:leading-snug line-clamp-3"
                     style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
                   >
                     {proj.title}
                   </h3>
-                  
-                  <button className="w-12 h-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center text-white shrink-0 hover:bg-white hover:text-black transition-colors duration-300">
-                    <FiArrowRight size={20} />
-                  </button>
                 </div>
               </div>
             </div>

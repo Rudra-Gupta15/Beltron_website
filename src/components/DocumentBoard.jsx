@@ -1,29 +1,51 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { FiDownload, FiFileText, FiArrowRight, FiLoader } from 'react-icons/fi'
+import { vacancies, projects } from '../data/index'
+import circularsData from '../data/lettersAndCirculars.json'
+import currentTendersData from '../data/currentTenders.json'
 
 const tabs = ['Latest Tenders', 'Recruitments', 'Important Circulars']
+
+const formattedTenders = currentTendersData.slice(0, 5).map(t => ({
+  title: t.name,
+  date: t.closeDate,
+  size: '2.4 MB'
+}))
+
+const formattedVacancies = vacancies.map(v => ({
+  title: `${v.title} - ${v.type}`,
+  date: v.date,
+  size: '1.5 MB'
+}))
+
+const formattedCirculars = circularsData.slice(0, 5).map(c => ({
+  title: c.name,
+  date: c.publishDate,
+  size: '1.2 MB'
+}))
 
 const DocumentBoard = () => {
   const [activeTab, setActiveTab] = useState(tabs[0])
   const [documents, setDocuments] = useState({
-    'Latest Tenders': [],
-    'Recruitments': [],
-    'Important Circulars': []
+    'Latest Tenders': formattedTenders,
+    'Recruitments': formattedVacancies,
+    'Important Circulars': formattedCirculars
   })
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    // Fetch live data from the local json-server backend
-    fetch('http://localhost:3001/documents')
-      .then(res => res.json())
-      .then(data => {
-        setDocuments(data)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error("Failed to fetch live documents:", err)
-        setLoading(false) // Optionally handle error state here
-      })
+    // If you need to fetch from a real backend in the future:
+    // fetch('http://localhost:3001/documents')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     setDocuments(data)
+    //     setLoading(false)
+    //   })
+    //   .catch(err => {
+    //     console.error("Failed to fetch live documents:", err)
+    //     setLoading(false)
+    //   })
   }, [])
 
   return (
@@ -75,9 +97,6 @@ const DocumentBoard = () => {
                         <span className="text-red-600 font-semibold">PDF ({doc.size})</span>
                       </div>
                     </div>
-                    <a href="#" className="flex-shrink-0 flex items-center justify-center w-9 h-9 rounded bg-white border border-gray-200 text-[#0A2E73] hover:bg-[#0A2E73] hover:text-white hover:border-[#0A2E73] transition-all shadow-sm">
-                      <FiDownload size={16} />
-                    </a>
                   </div>
                 ))
               ) : (
@@ -88,9 +107,12 @@ const DocumentBoard = () => {
             </div>
             
             <div className="p-4 bg-gray-50 border-t border-gray-100 text-right">
-              <a href="#" className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#0A2E73] hover:text-blue-700 transition-colors">
+              <Link 
+                to={activeTab === 'Latest Tenders' ? '/tenders/current' : activeTab === 'Recruitments' ? '/vacancies' : '/letters-and-circulars'} 
+                className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#0A2E73] hover:text-blue-700 transition-colors"
+              >
                 View All {activeTab} <FiArrowRight size={16} />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -104,18 +126,18 @@ const DocumentBoard = () => {
              </div>
              
              <div className="flex flex-col gap-3 flex-1 relative z-10">
-               {['Bihar State Data Centre (SDC)', 'BSWAN (State Wide Area Network)', 'e-Procurement Portal', 'ERP Implementation'].map((item, i) => (
-                 <a href="#" key={i} className="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/15 transition-colors border border-transparent hover:border-white/20">
+               {projects.slice(0, 4).map((item, i) => (
+                 <Link to="/projects" key={i} className="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/15 transition-colors border border-transparent hover:border-white/20">
                    <div className="w-1.5 h-1.5 rounded-full bg-blue-300" />
-                   <span className="text-[14px] font-medium text-gray-100 hover:text-white transition-colors">{item}</span>
-                 </a>
+                   <span className="text-[14px] font-medium text-gray-100 hover:text-white transition-colors">{item.title}</span>
+                 </Link>
                ))}
              </div>
              
              <div className="mt-8 relative z-10">
-               <a href="#" className="flex items-center justify-center gap-2 w-full bg-white text-[#0A2E73] py-3 rounded-lg font-bold text-[14px] hover:bg-gray-100 transition-colors shadow-sm">
+               <Link to="/projects" className="flex items-center justify-center gap-2 w-full bg-white text-[#0A2E73] py-3 rounded-lg font-bold text-[14px] hover:bg-gray-100 transition-colors shadow-sm">
                  Explore All Initiatives <FiArrowRight size={16} />
-               </a>
+               </Link>
              </div>
           </div>
           
