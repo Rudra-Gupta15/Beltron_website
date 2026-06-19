@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FiMenu, FiX, FiChevronDown, FiHome, FiInfo, FiUsers, FiUserCheck, FiTarget, FiPhone, FiGrid, FiCloud, FiMessageSquare, FiMail, FiServer, FiBriefcase, FiShoppingCart, FiFileText, FiArchive, FiDownload } from 'react-icons/fi'
+import { FiMenu, FiX, FiChevronDown, FiHome, FiInfo, FiUsers, FiUserCheck, FiTarget, FiPhone, FiGrid, FiCloud, FiMessageSquare, FiMail, FiServer, FiBriefcase, FiShoppingCart, FiFileText, FiArchive, FiDownload, FiSearch } from 'react-icons/fi'
+import { MdAccessibility } from 'react-icons/md'
 
 const navItems = [
   {
@@ -26,7 +27,7 @@ const navItems = [
   {
     label: 'Services',
     mega: true,
-    rows: 3,
+    rows: 4,
     dropdownLeft: 'right-0',
     caretLeft: 'right-[30px]',
     columns: [
@@ -34,6 +35,7 @@ const navItems = [
         { label: 'Cloud Services', desc: 'Secure hosting and digital infrastructure.', href: '/services', icon: FiCloud },
         { label: 'Messaging Services', desc: 'Bulk SMS and notification delivery.', href: '/services', icon: FiMessageSquare },
         { label: 'Email Services', desc: 'Official bulk email communication services.', href: '/services', icon: FiMail },
+        { label: 'ERP System', desc: 'Internal enterprise resource planning portal.', href: 'https://bsedcerp2.bihar.gov.in/login.php', icon: FiGrid },
       ],
       [
         { label: 'Manpower Services', desc: 'Skilled IT professionals supply.', href: '/services', icon: FiUsers },
@@ -92,7 +94,7 @@ const navItems = [
       ]
     ],
   },
-  { label: 'ERP', href: 'https://bsedcerp2.bihar.gov.in/login.php', external: true },
+
   {
     label: 'Resources',
     mega: true,
@@ -196,10 +198,14 @@ const DropdownMenu = ({ item }) => {
           }
 
           const Icon = link.icon || FiInfo;
+          const isExternal = link.href?.startsWith('http');
+          const LinkTag = isExternal ? 'a' : Link;
+          const linkProps = isExternal ? { href: link.href, target: "_blank", rel: "noopener noreferrer" } : { to: link.href };
+
           return (
-            <Link
+            <LinkTag
               key={lIdx}
-              to={link.href}
+              {...linkProps}
               className="flex items-start gap-4 p-4 border border-[#e2e8f0] rounded-[10px] transition-all hover:shadow-[0_4px_15px_rgba(0,0,0,0.04)] hover:border-[#0F4BB8] bg-white group h-full"
             >
               <div className="w-10 h-10 rounded-lg bg-[#F4F7FB] text-[#0F4BB8] flex items-center justify-center shrink-0 group-hover:bg-[#0F4BB8] group-hover:text-white transition-colors">
@@ -209,7 +215,7 @@ const DropdownMenu = ({ item }) => {
                 <h5 className="text-[14px] font-bold text-[#0f2d69] mb-1 group-hover:text-[#0F4BB8] transition-colors">{link.label}</h5>
                 <p className="text-[12px] text-[#64748b] leading-relaxed">{link.desc}</p>
               </div>
-            </Link>
+            </LinkTag>
           )
         })}
       </motion.div>
@@ -307,6 +313,57 @@ const Navbar = () => {
                 </AnimatePresence>
               </div>
             ))}
+
+            {/* Search */}
+            <div className="relative ml-2 group hidden xl:block">
+              <button className="flex h-9 w-9 items-center justify-center rounded-lg border border-transparent text-[#1C2F57] hover:bg-gray-50 hover:border-gray-200 transition-colors">
+                <FiSearch size={18} />
+              </button>
+              
+              <div className="absolute right-0 top-full mt-2 w-64 bg-white rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50 p-2">
+                <div className="flex items-center bg-gray-50 rounded-lg px-3 py-2 border border-gray-200 focus-within:border-[#00B4D8] focus-within:bg-white transition-colors">
+                  <FiSearch size={16} className="text-gray-400 mr-2 shrink-0" />
+                  <input 
+                    type="text" 
+                    placeholder="Search website..." 
+                    className="w-full bg-transparent border-none focus:outline-none text-[13px] font-medium text-gray-800 placeholder-gray-400"
+                    onKeyDown={(e) => {
+                      if(e.key === 'Enter') {
+                        window.location.href = `/search?q=${e.target.value}`
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Accessibility */}
+            <div className="group relative hidden xl:block ml-1">
+              <div className="flex h-9 items-center gap-1.5 rounded-lg border border-gray-200 bg-gray-50/50 px-2.5 text-[13px] font-bold text-[#1C2F57] hover:bg-white hover:border-[#00B4D8] transition shadow-sm cursor-pointer">
+                <MdAccessibility size={18} className="text-[#0F4BB8]" />
+                <FiChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
+              </div>
+              
+              <div className="absolute right-0 top-full mt-2 w-52 bg-white rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 p-4">
+                <div className="mb-4">
+                  <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-2">Text Size</span>
+                  <div className="flex gap-2">
+                    <button onClick={() => { document.documentElement.style.fontSize = '14px' }} className="flex-1 py-1.5 border border-gray-200 rounded-lg text-[#1C2F57] hover:bg-[#eaf5ff] hover:text-[#0F4BB8] hover:border-[#0F4BB8] font-bold text-sm transition-colors">A-</button>
+                    <button onClick={() => { document.documentElement.style.fontSize = '16px' }} className="flex-1 py-1.5 border border-gray-200 rounded-lg text-[#1C2F57] hover:bg-[#eaf5ff] hover:text-[#0F4BB8] hover:border-[#0F4BB8] font-bold text-base transition-colors">A</button>
+                    <button onClick={() => { document.documentElement.style.fontSize = '18px' }} className="flex-1 py-1.5 border border-gray-200 rounded-lg text-[#1C2F57] hover:bg-[#eaf5ff] hover:text-[#0F4BB8] hover:border-[#0F4BB8] font-bold text-lg transition-colors">A+</button>
+                  </div>
+                </div>
+                <div className="pt-4 border-t border-gray-100">
+                  <button 
+                    onClick={() => document.documentElement.classList.toggle('high-contrast')}
+                    className="w-full py-2 bg-black text-yellow-300 font-bold text-[11px] uppercase tracking-wide rounded-lg border border-yellow-300 hover:bg-gray-900 transition-colors"
+                  >
+                    High Contrast Mode
+                  </button>
+                </div>
+              </div>
+            </div>
+
           </nav>
 
           {/* Mobile Menu Toggle */}

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Outlet, useLocation, Navigate } from 'react-router-dom'
-import TopBar from './components/TopBar'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Footer from './components/Footer'
@@ -30,7 +29,6 @@ const ScrollToTop = () => {
 
 const Layout = () => (
   <div className="min-h-screen flex flex-col">
-    <TopBar />
     <Navbar />
     <main className="flex-1 bg-[#F8FAFF]">
       <Outlet />

@@ -11,7 +11,7 @@ const HeroSlider = () => {
     if (paused) return
     const timer = setInterval(() => {
       setCurrent(c => (c + 1) % heroSlides.length)
-    }, 3000)
+    }, 7000)
     return () => clearInterval(timer)
   }, [paused])
 
@@ -136,8 +136,8 @@ const HeroSlider = () => {
       </div>
 
       {/* Bottom Indicators Bar */}
-      <div className="hero-bottom-bar mt-8">
-        <div className="max-w-7xl mx-auto w-full flex overflow-x-auto no-scrollbar">
+      <div className="hero-bottom-bar mt-8 relative">
+        <div className="max-w-7xl mx-auto w-full flex overflow-x-auto no-scrollbar -mt-[10px] pt-[10px]">
           {heroSlides.map((s, i) => (
             <button
               key={i}
