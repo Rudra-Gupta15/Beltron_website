@@ -18,6 +18,7 @@ import About from './pages/About'
 import Procurement from './pages/Procurement'
 import NewsAndEvents from './pages/NewsAndEvents'
 import LettersAndCirculars from './pages/LettersAndCirculars'
+import ChatBot from './components/ChatBot'
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -34,6 +35,7 @@ const Layout = () => (
       <Outlet />
     </main>
     <Footer />
+    <ChatBot />
   </div>
 )
 
