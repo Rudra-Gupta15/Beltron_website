@@ -7,22 +7,31 @@ import currentTendersData from '../data/currentTenders.json'
 
 const tabs = ['Latest Tenders', 'Recruitments', 'Important Circulars']
 
+// Helper to generate a realistic looking fake file size
+const getDocSize = (title) => {
+  let hash = 0;
+  for (let i = 0; i < title.length; i++) {
+    hash = title.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return (1.2 + (Math.abs(hash) % 45) / 10).toFixed(1) + ' MB';
+}
+
 const formattedTenders = currentTendersData.slice(0, 5).map(t => ({
   title: t.name,
   date: t.closeDate,
-  size: '2.4 MB'
+  size: getDocSize(t.name)
 }))
 
 const formattedVacancies = vacancies.map(v => ({
   title: `${v.title} - ${v.type}`,
   date: v.date,
-  size: '1.5 MB'
+  size: getDocSize(v.title)
 }))
 
 const formattedCirculars = circularsData.slice(0, 5).map(c => ({
   title: c.name,
   date: c.publishDate,
-  size: '1.2 MB'
+  size: getDocSize(c.name)
 }))
 
 const DocumentBoard = () => {
@@ -94,7 +103,6 @@ const DocumentBoard = () => {
                       </h4>
                       <div className="flex items-center gap-4 text-[13px] text-gray-500 font-medium">
                         <span>{doc.date}</span>
-                        <span className="text-red-600 font-semibold">PDF ({doc.size})</span>
                       </div>
                     </div>
                   </div>
