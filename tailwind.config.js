@@ -7,10 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary:    '#0a4f9e',
-        darkblue:   '#003366',
-        lightblue:  '#1d75d8',
+        primary:    '#0F4BB8', // Exact NICSI primary blue
+        darkblue:   '#0A2E73', // Exact NICSI dark header blue
+        lightblue:  '#12B8FF', // Exact NICSI cyan accent
         govgray:    '#f5f5f5',
+        navtext:    '#1C2F57', // Exact NICSI dark navy text
       },
       fontFamily: {
         sans: ['Inter', 'Poppins', 'sans-serif'],
